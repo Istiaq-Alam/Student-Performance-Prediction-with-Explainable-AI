@@ -1,0 +1,25 @@
+# --- Python/Code Junk ---
+__pycache__/
+*.pyc
+.ipynb_checkpoints
+.env
+venv/
+.spenv
+
+# --- LaTeX Junk (Auto-generated files) ---
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.fls
+*.fdb_latexmk
+
+# --- Large Data (Protect your storage limits) ---
+# If you have massive datasets >100MB, uncomment the line below
+# 01_code/data/*.csv
+# 01_code/data/*.zip
+
+# --- OS Junk ---
+.DS_Store
+Thumbs.db
