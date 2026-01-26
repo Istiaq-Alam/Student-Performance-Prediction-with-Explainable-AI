@@ -1,0 +1,54 @@
+\documentclass[12pt,notitlepage,oneside]{report}
+
+\usepackage{cseugthesis}
+
+% Uncomment the following line if you need to write in Bangla
+% \usepackage{usebangla}
+
+% Uncomment any of the following lines should you need to
+% suppress the LOF, or LOT or LOA
+
+% \suppresslistoffigures 
+% \suppresslistoftables
+% \suppresslistofalgorithms
+
+% For index creation, comment this out if you do not want to create an
+% index
+\makeindex[intoc]
+
+\begin{document}
+
+% Edit as needed below this line
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Chapter-1 Introduction
+\input{cseugthesisintroduction.tex}
+
+% Citation examples
+\input{cseugthesisciteexamples.tex}
+
+% Another chapter
+\input{cseugthesisanotherchapter.tex}
+%Index creation
+\input{cseugthesisindexcreation.tex}
+
+% Bangla example, uncomment if you need this
+% \input {banglaexample.tex}
+
+% Chapter with math in ttile
+\input{cseugthesischapterwithmathintitle.tex}
+
+% Bibliographies and appendices
+\input{cseugthesisbibliography.tex}
+
+% Index, comment this out if you do not want to create an index
+\printindex
+
+\appendix
+% Algorithms
+\input{cseugthesisalgorithms.tex}
+
+% Codes
+\input{cseugthesiscodes.tex}
+
+\end{document}
