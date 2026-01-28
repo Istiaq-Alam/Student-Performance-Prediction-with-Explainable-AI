@@ -161,40 +161,70 @@ These features are actionable and useful for early interventions.
 \end{itemize}
 \end{frame}
 
+
+% --------------------
+\begin{frame}{Research Gap Identified}
+\begin{block}{Common Pattern in Previous Studies}
+Most prior papers:
+\begin{itemize}
+    \item ✔ Focus on accuracy
+    \item ✖ Ignore fairness
+    \item ✖ Ignore explainability
+    \item ✖ Use private datasets
+    \item ✖ No reproducibility
+\end{itemize}
+\end{block}
+\end{frame}
+
+
 % --------------------
 \begin{frame}{Key Related Studies and Limitations}
 \begin{itemize}
     \item Cortez \& Silva (2008)
     \begin{itemize}
+        \item Dataset: UCI
         \item Used decision trees and regression
-        \item Limitation: No fairness or bias analysis
+        \item Limitation: No fairness \& explainability \\
+         Assumes higher accuracy = better education decisions.
     \end{itemize}
 
     \item Albreiki et al. (2021)
     \begin{itemize}
         \item Compared multiple ML models
+        \item *No bias analysis
+		\item *No code shared
         \item Limitation: Ignored demographic bias
     \end{itemize}
-
-    \item Livieris et al. (2021)
-    \begin{itemize}
-        \item Semi-supervised learning
-        \item Limitation: Lack of interpretability
-    \end{itemize}
+		
+	\item Johora et al. (2025)
+	\begin{itemize}
+	\item Added SHAP + fairness
+        \item *Limited socioeconomic analysis
+        \item Limitation: Does not analyze intersectional bias deeply.
+	\end{itemize}		
+	
+    
+    
 \end{itemize}
 \end{frame}
 
-% --------------------
-\begin{frame}{Research Gap Identified}
-\begin{block}{Main Gap}
-No existing work simultaneously optimizes:
+
+\begin{frame}{Key Related Studies and Limitations Cont.}
+
 \begin{itemize}
-    \item Prediction accuracy
-    \item Fairness across sensitive attributes
-    \item Model explainability
-    \item Reproducibility
+\item Livieris et al. (2021)
+    \begin{itemize}
+        \item Semi-supervised learning
+        \item Limitation: Lack of interpretability. No fairness \& interpretable
+    \end{itemize}
+    
+    \item Li et al. (2021)
+	\begin{itemize}
+		\item High accuracy
+     	\item *Limited socioeconomic analysis
+        \item Limitation: No Black-box \& Hard to justify to educators
+	\end{itemize}
 \end{itemize}
-\end{block}
 \end{frame}
 
 % ==================================================
