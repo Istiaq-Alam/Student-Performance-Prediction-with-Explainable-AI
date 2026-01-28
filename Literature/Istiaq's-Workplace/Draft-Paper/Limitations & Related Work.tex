@@ -1,0 +1,261 @@
+\documentclass[aspectratio=169]{beamer}
+
+% -------------------- Theme --------------------
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% -------------------- Packages --------------------
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% -------------------- Title Info --------------------
+\title[Fair Student Performance Prediction]{
+Beyond Performance:\\
+Explaining and Ensuring Fairness in\\
+Student Academic Performance Prediction
+}
+\author{Istiak Alam}
+\institute{Department of CSE}
+\date{\today}
+
+% -------------------- Document --------------------
+\begin{document}
+
+% -------------------- Title Slide --------------------
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% -------------------- Outline --------------------
+\begin{frame}{Presentation Outline}
+\begin{itemize}
+    \item Problem Motivation
+    \item Dataset Description
+    \item Related Work and Limitations
+    \item Limitations of the Proposed Paper
+    \item Targeted Work and Future Scope
+    \item Conclusion
+\end{itemize}
+\end{frame}
+
+% ==================================================
+\section{Problem Motivation}
+
+\begin{frame}{Why This Study Is Important}
+\begin{itemize}
+    \item Most student performance prediction models focus only on accuracy
+    \item Fairness and bias are often ignored
+    \item Black-box models lack transparency
+    \item Unfair predictions can negatively impact students
+\end{itemize}
+
+\bigskip
+\textbf{Core Argument:}\\
+High predictive accuracy alone is insufficient in educational decision-making.
+\end{frame}
+
+% ==================================================
+\section{Dataset Description}
+
+\begin{frame}{Dataset Used in This Study}
+\begin{itemize}
+    \item Dataset: \textbf{UCI Student Performance Dataset}
+    \item Source: UCI Machine Learning Repository
+    \item Courses:
+    \begin{itemize}
+        \item Mathematics (student-mat.csv)
+        \item Portuguese (student-por.csv)
+    \end{itemize}
+    \item Total records after preprocessing: 395 students
+    \item Total attributes: 33
+\end{itemize}
+\end{frame}
+
+% --------------------
+\begin{frame}{Demographic Attributes}
+\begin{table}
+\centering
+\begin{tabular}{ll}
+\toprule
+Attribute & Description \\
+\midrule
+sex & Gender of the student \\
+age & Age of the student \\
+address & Urban or rural residence \\
+famsize & Family size \\
+Pstatus & Parents living together or apart \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+\textbf{Note:} These attributes may introduce bias and are treated as sensitive features.
+\end{frame}
+
+% --------------------
+\begin{frame}{Socioeconomic Attributes}
+\begin{table}
+\centering
+\begin{tabular}{ll}
+\toprule
+Attribute & Description \\
+\midrule
+Medu & Mother's education level \\
+Fedu & Father's education level \\
+Mjob & Mother's occupation \\
+Fjob & Father's occupation \\
+guardian & Primary guardian of the student \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+These attributes strongly influence academic performance but raise fairness concerns.
+\end{frame}
+
+% --------------------
+\begin{frame}{Academic and Behavioral Attributes}
+\begin{itemize}
+    \item studytime – Weekly study hours
+    \item failures – Number of past failures
+    \item schoolsup – School educational support
+    \item famsup – Family educational support
+    \item paid – Extra paid classes
+    \item absences – Total absences
+    \item goout – Social activity level
+    \item Dalc, Walc – Alcohol consumption
+    \item health – Health condition
+\end{itemize}
+
+\bigskip
+These features are actionable and useful for early interventions.
+\end{frame}
+
+% --------------------
+\begin{frame}{Target Variable}
+\begin{itemize}
+    \item G1 – First period grade
+    \item G2 – Second period grade
+    \item G3 – Final grade (Target)
+\end{itemize}
+
+\bigskip
+\textbf{Prediction Tasks:}
+\begin{itemize}
+    \item Classification: Pass / Fail
+    \item Regression: Continuous grade prediction
+\end{itemize}
+\end{frame}
+
+% ==================================================
+\section{Related Work}
+
+\begin{frame}{Overview of Related Work}
+\begin{itemize}
+    \item Traditional ML models (LR, SVM, RF)
+    \item Deep learning-based approaches
+    \item Focus primarily on predictive accuracy
+    \item Limited attention to fairness and explainability
+\end{itemize}
+\end{frame}
+
+% --------------------
+\begin{frame}{Key Related Studies and Limitations}
+\begin{itemize}
+    \item Cortez \& Silva (2008)
+    \begin{itemize}
+        \item Used decision trees and regression
+        \item Limitation: No fairness or bias analysis
+    \end{itemize}
+
+    \item Albreiki et al. (2021)
+    \begin{itemize}
+        \item Compared multiple ML models
+        \item Limitation: Ignored demographic bias
+    \end{itemize}
+
+    \item Livieris et al. (2021)
+    \begin{itemize}
+        \item Semi-supervised learning
+        \item Limitation: Lack of interpretability
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% --------------------
+\begin{frame}{Research Gap Identified}
+\begin{block}{Main Gap}
+No existing work simultaneously optimizes:
+\begin{itemize}
+    \item Prediction accuracy
+    \item Fairness across sensitive attributes
+    \item Model explainability
+    \item Reproducibility
+\end{itemize}
+\end{block}
+\end{frame}
+
+% ==================================================
+\section{Limitations of the Paper}
+
+\begin{frame}{Dataset Limitations}
+\begin{itemize}
+    \item Dataset collected only from Portugal
+    \item Limited cultural and geographic diversity
+    \item No ethnicity or income attributes
+    \item Results may not generalize globally
+\end{itemize}
+\end{frame}
+
+% --------------------
+\begin{frame}{Methodological Limitations}
+\begin{itemize}
+    \item Use of SMOTE-NC introduces synthetic data
+    \item Binary pass/fail classification loses grade granularity
+    \item Limited fairness metrics used
+    \item No real-world deployment validation
+\end{itemize}
+\end{frame}
+
+% ==================================================
+\section{Targeted Work and Future Scope}
+
+\begin{frame}{How This Paper Addresses Past Limitations}
+\begin{itemize}
+    \item Introduces fairness-aware evaluation
+    \item Uses explainable AI techniques (SHAP, LIME)
+    \item Balances accuracy with ethical considerations
+    \item Uses open datasets for reproducibility
+\end{itemize}
+\end{frame}
+
+% --------------------
+\begin{frame}{Future Research Directions}
+\begin{itemize}
+    \item Multi-country educational datasets
+    \item Intersectional fairness analysis
+    \item Causal fairness modeling
+    \item Teacher-in-the-loop evaluation
+    \item Longitudinal performance tracking
+\end{itemize}
+\end{frame}
+
+% ==================================================
+\section{Conclusion}
+
+\begin{frame}{Conclusion}
+\begin{itemize}
+    \item Accuracy alone is insufficient in educational AI
+    \item Fairness and explainability are essential
+    \item The paper provides a strong baseline
+    \item Significant opportunities remain for future improvement
+\end{itemize}
+
+\bigskip
+\centering
+\textbf{Thank You}
+\end{frame}
+
+\end{document}

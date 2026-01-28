@@ -14,6 +14,7 @@ venv/
 *.toc
 *.fls
 *.fdb_latexmk
+*.snm
 
 # --- Large Data (Protect your storage limits) ---
 # If you have massive datasets >100MB, uncomment the line below
