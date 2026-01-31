@@ -1,9 +1,9 @@
 
 pandas
 numpy
-scikit-learn 
-xgboost 
-imbalanced-learn
+scikit-learn==1.4.2
+xgboost==2.0.3
+imbalanced-learn==0.12.2
 aif360 
 shap 
 lime 
